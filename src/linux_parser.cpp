@@ -132,7 +132,7 @@ long LinuxParser::Jiffies(){
 
 // TODO: Read and return the number of active jiffies for a PID
 // REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::ActiveJiffies(int pid[[maybe_unused]]) {
+long LinuxParser::ActiveJiffies(int pid) {
   string line;
   string value;
   string utime;
@@ -275,7 +275,7 @@ int LinuxParser::RunningProcesses(){
 
 // TODO: Read and return the command associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Command(int pid[[maybe_unused]]){
+string LinuxParser::Command(int pid){
   string line;
   std::ifstream filestream(kProcDirectory + std::to_string(pid) + kCmdlineFilename);
   if (filestream.is_open()) {
@@ -286,7 +286,7 @@ string LinuxParser::Command(int pid[[maybe_unused]]){
 
 // TODO: Read and return the memory used by a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Ram(int pid[[maybe_unused]]){
+string LinuxParser::Ram(int pid){
   string line;
   string key;
   string value;
@@ -306,7 +306,7 @@ string LinuxParser::Ram(int pid[[maybe_unused]]){
 
 // TODO: Read and return the user ID associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Uid(int pid[[maybe_unused]]) {
+string LinuxParser::Uid(int pid) {
   string line;
   string key;
   string value;
@@ -326,7 +326,7 @@ string LinuxParser::Uid(int pid[[maybe_unused]]) {
 
 // TODO: Read and return the user associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::User(int pid[[maybe_unused]]) {
+string LinuxParser::User(int pid) {
   string line;
   string key;
   string value;
@@ -348,7 +348,7 @@ string LinuxParser::User(int pid[[maybe_unused]]) {
 
 // TODO: Read and return the uptime of a process
 // REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::UpTime(int pid[[maybe_unused]]) {
+long LinuxParser::UpTime(int pid) {
   string line;
   string value;
   std::ifstream filestream(kProcDirectory + std::to_string(pid) + kStatFilename);
